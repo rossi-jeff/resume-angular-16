@@ -15,7 +15,7 @@ const routes: Routes = [
   { path: 'employment', component: EmploymentComponent },
   { path: 'contact', component: ContactComponent },
   { path: 'references', component: ReferencesComponent },
-  { path: 'tesimonials', component: TestimonialsComponent },
+  { path: 'testimonials', component: TestimonialsComponent },
   { path: 'resume', component: ResumeComponent },
   { path: 'links', component: LinksComponent },
 ];

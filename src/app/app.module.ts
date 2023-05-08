@@ -11,6 +11,7 @@ import { TestimonialsComponent } from './testimonials/testimonials.component';
 import { ResumeComponent } from './resume/resume.component';
 import { LinksComponent } from './links/links.component';
 import { HomeComponent } from './home/home.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -22,13 +23,10 @@ import { HomeComponent } from './home/home.component';
     TestimonialsComponent,
     ResumeComponent,
     LinksComponent,
-    HomeComponent
+    HomeComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
