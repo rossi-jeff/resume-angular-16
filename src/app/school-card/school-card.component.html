@@ -1,3 +1,22 @@
-<div id="school-{{ school.Id }}">
+<div id="school-{{ school.Id }}" class="mb-4">
   <h2>{{ school.Name }}</h2>
+  <div *ngIf="address.length">{{ address }}</div>
+  <div *ngIf="school.From && school.To" class="flex flex-wrap">
+    <div class="w-16">
+      <strong>From</strong>
+    </div>
+    <div class="w-32">{{ school.From.Month }} {{ school.From.Year }}</div>
+    <div class="w-16">
+      <strong>To</strong>
+    </div>
+    <div>{{ school.To.Month }} {{ school.To.Year }}</div>
+  </div>
+  <div *ngIf="school.Degree">
+    <strong class="mr-2">Degree</strong>
+    {{ school.Degree }}
+  </div>
+  <div *ngIf="school.Program">
+    <strong class="mr-2">Program</strong>
+    {{ school.Program }}
+  </div>
 </div>

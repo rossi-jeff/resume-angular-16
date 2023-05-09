@@ -1,1 +1,22 @@
-<div>{{ job.Company }}</div>
+<div id="job-{{ job.Id }}" class="mb-4">
+  <h2>{{ job.Company }}</h2>
+  <div *ngIf="address.length">{{ address }}</div>
+  <div *ngIf="job.From && job.To" class="flex flex-wrap">
+    <div class="w-16">
+      <strong>From</strong>
+    </div>
+    <div class="w-32">{{ job.From.Month }} {{ job.From.Year }}</div>
+    <div class="w-16">
+      <strong>To</strong>
+    </div>
+    <div>{{ job.To.Month }} {{ job.To.Year }}</div>
+  </div>
+  <div *ngIf="job.Title">
+    <strong class="mr-2">Title</strong>
+    {{ job.Title }}
+  </div>
+  <div *ngIf="job.Duties">
+    <strong class="mr-2">Duties</strong>
+    {{ job.Duties }}
+  </div>
+</div>
