@@ -1,1 +1,6 @@
-<p>testimonials works!</p>
+<h1>Testimonials</h1>
+
+<app-comment-card
+  *ngFor="let comment of comments"
+  [comment]="comment"
+></app-comment-card>

@@ -1,0 +1,24 @@
+<div id="reference-{{ reference.Id }}" class="mb-4">
+  <h2>{{ name }}</h2>
+  <div *ngIf="reference.Company">
+    <strong class="mr-2">Company</strong>
+    {{ reference.Company }}
+  </div>
+  <div *ngIf="reference.Title">
+    <strong class="mr-2">Title</strong>
+    {{ reference.Title }}
+  </div>
+  <div *ngIf="phone.length">
+    <strong class="mr-2">Phone</strong>
+    {{ phone }}
+  </div>
+  <div *ngIf="email.length">
+    <strong class="mr-2">Email</strong>
+    {{ email }}
+  </div>
+  <div *ngIf="reference.Comments && reference.Comments.length > 0">
+    <div *ngFor="let comment of reference.Comments">
+      {{ comment.Message }}
+    </div>
+  </div>
+</div>

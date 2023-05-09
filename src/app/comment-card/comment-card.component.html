@@ -1,0 +1,9 @@
+<div id="comment-{{ comment.Id }}" class="mb-4">
+  <div>
+    {{ comment.Message }}
+  </div>
+  <div *ngIf="author.length" class="text-right font-bold">
+    --
+    {{ author }}
+  </div>
+</div>

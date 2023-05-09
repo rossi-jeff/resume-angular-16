@@ -14,6 +14,8 @@ import { HomeComponent } from './home/home.component';
 import { HttpClientModule } from '@angular/common/http';
 import { SchoolCardComponent } from './school-card/school-card.component';
 import { JobCardComponent } from './job-card/job-card.component';
+import { ReferenceCardComponent } from './reference-card/reference-card.component';
+import { CommentCardComponent } from './comment-card/comment-card.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +30,8 @@ import { JobCardComponent } from './job-card/job-card.component';
     HomeComponent,
     SchoolCardComponent,
     JobCardComponent,
+    ReferenceCardComponent,
+    CommentCardComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],
