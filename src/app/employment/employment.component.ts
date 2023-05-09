@@ -16,6 +16,6 @@ export class EmploymentComponent implements OnInit {
   ngOnInit(): void {
     this.graphql
       .query({ query: GET_JOBS_QUERY })
-      .subscribe((data: any) => (this.jobs = data.getJobs));
+      .subscribe((response: any) => (this.jobs = response.data.getJobs));
   }
 }

@@ -16,6 +16,6 @@ export class EducationComponent implements OnInit {
   ngOnInit(): void {
     this.graphql
       .query({ query: GET_SCHOOLS_QUERY })
-      .subscribe((data: any) => (this.schools = data.getSchools));
+      .subscribe((response: any) => (this.schools = response.data.getSchools));
   }
 }

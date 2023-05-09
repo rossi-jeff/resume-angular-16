@@ -18,6 +18,8 @@ export class GraphqlService {
         headers: {
           'Content-Type': 'application/json',
         },
+        observe: 'body',
+        responseType: 'json',
       }
     );
   }
@@ -34,6 +36,8 @@ export class GraphqlService {
         headers: {
           'Content-Type': 'application/json',
         },
+        observe: 'body',
+        responseType: 'json',
       }
     );
   }
