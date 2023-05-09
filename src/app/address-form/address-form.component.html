@@ -1,0 +1,36 @@
+<form [formGroup]="form" id="address-form">
+  <div>
+    <label for="address">Address</label>
+    <input
+      type="text"
+      name="address"
+      id="address"
+      class="w-full"
+      formControlName="Address"
+    />
+  </div>
+  <div>
+    <label for="suite">Suite</label>
+    <input
+      type="text"
+      name="suite"
+      id="suite"
+      class="w-full"
+      formControlName="Suite"
+    />
+  </div>
+  <div class="flex flex-wrap justify-between">
+    <div>
+      <label for="city">City</label>
+      <input type="text" name="city" id="city" formControlName="City" />
+    </div>
+    <div>
+      <label for="state">State</label>
+      <input type="text" name="state" id="state" formControlName="State" />
+    </div>
+    <div>
+      <label for="zip">Zip</label>
+      <input type="text" name="zip" id="zip" formControlName="Zip" />
+    </div>
+  </div>
+</form>

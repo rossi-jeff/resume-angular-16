@@ -1,0 +1,21 @@
+<form [formGroup]="form">
+  <div>
+    <label for="subject">Subject</label>
+    <input
+      type="text"
+      name="subject"
+      id="subject"
+      class="w-full"
+      formControlName="Subject"
+    />
+  </div>
+  <div>
+    <label for="message">Message</label>
+    <textarea
+      name="message"
+      id="message"
+      class="w-full h-20"
+      formControlName="Message"
+    ></textarea>
+  </div>
+</form>

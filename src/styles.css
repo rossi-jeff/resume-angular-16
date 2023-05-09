@@ -18,3 +18,20 @@ h3 {
 h4 {
   @apply font-bold;
 }
+label {
+  @apply font-bold block;
+}
+input,
+select,
+textarea {
+  @apply border border-black rounded px-2 py-1;
+}
+button.accordion {
+  @apply w-full px-2 py-1 border border-black rounded font-bold text-left;
+}
+button.accordion.open {
+  @apply bg-slate-300 mb-2;
+}
+.accordion-section {
+  @apply border border-black rounded p-2;
+}

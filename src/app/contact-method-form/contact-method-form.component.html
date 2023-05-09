@@ -1,0 +1,32 @@
+<form [formGroup]="form">
+  <div class="flex flex-wrap justify-between">
+    <div>
+      <label for="email-type">Email Type</label>
+      <select name="email-type" id="email-type" formControlName="EmailType">
+        <option *ngFor="let opt of emailTypes" [value]="opt">{{ opt }}</option>
+      </select>
+    </div>
+    <div>
+      <label for="email">Email</label>
+      <input type="email" name="email" id="email" formControlName="Email" />
+    </div>
+    <div>
+      <label for="phone-type">Phone Type</label>
+      <select name="phone-type" id="phone-type" formControlName="PhoneType">
+        <option *ngFor="let opt of phoneTypes" [value]="opt">{{ opt }}</option>
+      </select>
+    </div>
+    <div>
+      <label for="phone">Phone</label>
+      <input type="tel" name="phone" id="phone" formControlName="Phone" />
+    </div>
+    <div>
+      <label for="preferred">Preferred</label>
+      <select name="preferred" id="preferred" formControlName="Preferred">
+        <option *ngFor="let opt of preferredTypes" [value]="opt">
+          {{ opt }}
+        </option>
+      </select>
+    </div>
+  </div>
+</form>

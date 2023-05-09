@@ -1,1 +1,46 @@
-<p>contact works!</p>
+<h1>Contact Me</h1>
+
+<div id="contact-form-wrapper" [formGroup]="contactForm">
+  <div id="contact-accordion">
+    <!-- name -->
+    <div id="name-accordion" class="accordion-section">
+      <button id="name-button" class="accordion" (click)="toggle('name')">
+        Name
+      </button>
+      <div id="name-accordion-content" style="display: none">
+        <app-name-form formName="Name"></app-name-form>
+      </div>
+    </div>
+    <!--address-->
+    <div id="address-accordion" class="accordion-section">
+      <button id="address-button" class="accordion" (click)="toggle('address')">
+        Address
+      </button>
+      <div id="address-accordion-content" style="display: none">
+        <app-address-form formName="Address"></app-address-form>
+      </div>
+    </div>
+    <!--contact methods-->
+    <div id="contact-method-accordion" class="accordion-section">
+      <button
+        id="contact-method-button"
+        class="accordion"
+        (click)="toggle('contact-method')"
+      >
+        Contact Methods
+      </button>
+      <div id="contact-method-accordion-content" style="display: none">
+        <app-contact-method-form></app-contact-method-form>
+      </div>
+    </div>
+    <!--message-->
+    <div id="message-accordion" class="accordion-section">
+      <button id="message-button" class="accordion" (click)="toggle('message')">
+        Message
+      </button>
+      <div id="message-accordion-content" style="display: none">
+        <app-message-form></app-message-form>
+      </div>
+    </div>
+  </div>
+</div>

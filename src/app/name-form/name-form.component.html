@@ -1,0 +1,32 @@
+<form [formGroup]="form" id="name-form">
+  <div class="flex flex-wrap justify-between">
+    <div>
+      <label for="salutation">Salutation</label>
+      <select name="salutation" id="salutation" formControlName="Salutation">
+        <option *ngFor="let opt of salutations" [value]="opt">{{ opt }}</option>
+      </select>
+    </div>
+    <div>
+      <label for="first">First</label>
+      <input type="text" name="first" id="first" formControlName="First" />
+    </div>
+    <div>
+      <label for="middle">Middle</label>
+      <input type="text" name="middle" id="middle" formControlName="Middle" />
+    </div>
+    <div>
+      <label for="last">Last</label>
+      <input type="text" name="last" id="last" formControlName="Last" />
+    </div>
+    <div>
+      <label for="suffix">Suffix</label>
+      <input
+        type="text"
+        name="suffix"
+        id="suffix"
+        class="w-20"
+        formControlName="Suffix"
+      />
+    </div>
+  </div>
+</form>
