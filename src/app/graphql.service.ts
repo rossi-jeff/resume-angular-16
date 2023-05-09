@@ -5,14 +5,15 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root',
 })
 export class GraphqlService {
-  private endPoint = 'https://resume-gql.jeff-rossi.com/graphql';
+  private readonly endPoint = 'https://resume-gql.jeff-rossi.com/graphql';
 
   constructor(private http: HttpClient) {}
 
-  query(queryStr: string, variables: any = {}) {
+  public query(options: { query: string; variables?: { [key: string]: any } }) {
+    const { query, variables } = options;
     return this.http.post(
       this.endPoint,
-      { query: queryStr, variables },
+      { query, variables },
       {
         headers: {
           'Content-Type': 'application/json',
@@ -21,10 +22,14 @@ export class GraphqlService {
     );
   }
 
-  mutation(mutationStr: string, variables: any) {
+  public mutation(options: {
+    mutation: string;
+    variables: { [key: string]: any };
+  }) {
+    const { mutation, variables } = options;
     return this.http.post(
       this.endPoint,
-      { query: mutationStr, variables },
+      { query: mutation, variables },
       {
         headers: {
           'Content-Type': 'application/json',
