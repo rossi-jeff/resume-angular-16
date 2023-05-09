@@ -15,3 +15,6 @@ h2 {
 h3 {
   @apply font-bold text-lg;
 }
+h4 {
+  @apply font-bold;
+}

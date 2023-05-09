@@ -1,1 +1,121 @@
-<p>resume works!</p>
+<h1>Resume</h1>
+
+<div id="print-container" class="border border-black bg-white text-black p-4">
+  <h2>Jeff Rossi</h2>
+  <div>Software Developer</div>
+  <hr class="border-2 border-black mb-4" />
+
+  <h3>Employment</h3>
+  <hr class="border-2 border-black mb-4" />
+  <div *ngFor="let job of jobs" class="mb-4">
+    <h4>{{ job.Company }}</h4>
+    <div *ngIf="job.Address && getAddress(job.Address)">
+      {{ getAddress(job.Address) }}
+    </div>
+    <div *ngIf="job.From && job.To" class="flex flex-wrap">
+      <div class="w-16">
+        <strong>From</strong>
+      </div>
+      <div class="w-32">{{ job.From.Month }} {{ job.From.Year }}</div>
+      <div class="w-16">
+        <strong>To</strong>
+      </div>
+      <div>{{ job.To.Month }} {{ job.To.Year }}</div>
+    </div>
+    <div *ngIf="job.Title">
+      <strong class="mr-2">Title</strong>
+      {{ job.Title }}
+    </div>
+    <div *ngIf="job.Duties">
+      <strong class="mr-2">Duties</strong>
+      {{ job.Duties }}
+    </div>
+  </div>
+
+  <h3>Education</h3>
+  <hr class="border-2 border-black mb-4" />
+  <div *ngFor="let school of schools" class="mb-4">
+    <h4>{{ school.Name }}</h4>
+    <div *ngIf="school.Address && getAddress(school.Address)">
+      {{ getAddress(school.Address) }}
+    </div>
+    <div *ngIf="school.From && school.To" class="flex flex-wrap">
+      <div class="w-16">
+        <strong>From</strong>
+      </div>
+      <div class="w-32">{{ school.From.Month }} {{ school.From.Year }}</div>
+      <div class="w-16">
+        <strong>To</strong>
+      </div>
+      <div>{{ school.To.Month }} {{ school.To.Year }}</div>
+    </div>
+    <div *ngIf="school.Degree">
+      <strong class="mr-2">Degree</strong>
+      {{ school.Degree }}
+    </div>
+    <div *ngIf="school.Program">
+      <strong class="mr-2">Program</strong>
+      {{ school.Program }}
+    </div>
+  </div>
+
+  <h3>References</h3>
+  <hr class="border-2 border-black mb-4" />
+  <div *ngFor="let reference of references" class="mb-4">
+    <h4>{{ getName(reference) }}</h4>
+    <div *ngIf="reference.Company">
+      <strong class="mr-2">Company</strong>
+      {{ reference.Company }}
+    </div>
+    <div *ngIf="reference.Title">
+      <strong class="mr-2">Title</strong>
+      {{ reference.Title }}
+    </div>
+    <div *ngIf="getPhone(reference)">
+      <strong class="mr-2">Phone</strong>
+      {{ getPhone(reference) }}
+    </div>
+    <div *ngIf="getEmail(reference)">
+      <strong class="mr-2">Email</strong>
+      {{ getEmail(reference) }}
+    </div>
+  </div>
+
+  <h3>Online</h3>
+  <hr class="border-2 border-black mb-4" />
+  <div>
+    <strong>React:</strong>
+    https://resume-react.jeff-rossi.com/
+  </div>
+  <div>
+    <strong>Vue:</strong>
+    https://resume-vue.jeff-rossi.com/
+  </div>
+  <div>
+    <strong>Angular:</strong>
+    https://resume-angular.jeff-rossi.com/
+  </div>
+  <div>
+    <strong>Svelte:</strong>
+    https://resume-svelte.jeff-rossi.com/
+  </div>
+
+  <h3>Contact</h3>
+  <hr class="border-2 border-black mb-4" />
+  <div>
+    <strong>Address:</strong>
+    1506 Tuscaloosa Ave, Holly Hill Florida 32117
+  </div>
+  <div>
+    <strong>Home:</strong>
+    (386) 226-8913
+  </div>
+  <div>
+    <strong>Cell:</strong>
+    (386) 316-8485
+  </div>
+  <div>
+    <strong>Email:</strong>
+    inquiries@jeff-rossi.com
+  </div>
+</div>
