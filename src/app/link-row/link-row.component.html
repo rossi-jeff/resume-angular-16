@@ -1,0 +1,16 @@
+<div id="link-{{ link.Id }}" class="mb-2">
+  <div class="flex flex-wrap">
+    <div class="flex-grow">
+      <h4>{{ link.Title }}</h4>
+    </div>
+    <div class="w-20">
+      {{ link.Type }}
+    </div>
+    <div class="w-20 text-right">
+      <a [href]="link.Url" target="_blank">Visit</a>
+    </div>
+  </div>
+  <div>
+    {{ link.Description }}
+  </div>
+</div>

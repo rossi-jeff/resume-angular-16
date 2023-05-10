@@ -21,6 +21,7 @@ import { NameFormComponent } from './name-form/name-form.component';
 import { ContactMethodFormComponent } from './contact-method-form/contact-method-form.component';
 import { MessageFormComponent } from './message-form/message-form.component';
 import { AddressFormComponent } from './address-form/address-form.component';
+import { LinkRowComponent } from './link-row/link-row.component';
 
 @NgModule({
   declarations: [
@@ -41,6 +42,7 @@ import { AddressFormComponent } from './address-form/address-form.component';
     ContactMethodFormComponent,
     MessageFormComponent,
     AddressFormComponent,
+    LinkRowComponent,
   ],
   imports: [
     BrowserModule,

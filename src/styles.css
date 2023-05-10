@@ -48,3 +48,9 @@ input.ng-invalid.ng-touched,
 textarea.ng-invalid.ng-touched {
   @apply border border-red-500;
 }
+a {
+  @apply font-bold;
+}
+a:hover {
+  @apply underline;
+}
