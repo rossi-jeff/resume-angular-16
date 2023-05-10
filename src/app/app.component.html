@@ -1,12 +1,8 @@
-<div id="nav-links" class="flex flex-wrap justify-between">
-  <button routerLink="/">Home</button>
-  <button routerLink="/employment">Employment</button>
-  <button routerLink="/education">Education</button>
-  <button routerLink="/contact">Contact</button>
-  <button routerLink="/references">References</button>
-  <button routerLink="/testimonials">Testimonials</button>
-  <button routerLink="/resume">Resume</button>
-  <button routerLink="/links">Links</button>
+<div class="h-screen flex flex-col">
+  <app-header-bar></app-header-bar>
+  <div class="flex-grow overflow-y-auto h-full mx-4">
+    <router-outlet></router-outlet>
+    <div id="scroll-space" class="h-10"></div>
+  </div>
+  <app-footer-bar></app-footer-bar>
 </div>
-
-<router-outlet></router-outlet>
