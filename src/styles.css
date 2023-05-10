@@ -38,10 +38,12 @@ button.accordion.open {
 .accordion-section {
   @apply border border-four rounded p-2;
 }
-button.contact-submit {
+button.contact-submit,
+button.print-button {
   @apply border border-two text-two bg-three rounded px-2 py-1 mt-2;
 }
-button.contact-submit:hover {
+button.contact-submit:hover,
+button.print-button:hover {
   @apply bg-four text-one border-one;
 }
 button:disabled {

@@ -42,6 +42,31 @@ export class ResumeComponent implements OnInit {
     return FormatAddress(address);
   };
 
+  print = () => {
+    const container = document.getElementById('print-container');
+    if (container) {
+      const styles = document.styleSheets;
+      const content = container.innerHTML;
+      const printWindow = window.open('', '', 'height=500, width=500');
+      if (printWindow) {
+        printWindow.document.write('<html>');
+        if (styles) {
+          printWindow.document.write('<head>');
+          printWindow.document.write(
+            `<link rel='stylesheet' href='${styles[0].href}' />`
+          );
+          printWindow.document.write('</head>');
+        }
+        printWindow.document.write('<body style="padding: 1em">');
+        printWindow.document.write(content);
+        printWindow.document.write('</body>');
+        printWindow.document.write('</html>');
+        printWindow.document.close();
+        printWindow.print();
+      }
+    }
+  };
+
   ngOnInit(): void {
     this.graphql
       .query({ query: GET_JOBS_QUERY })

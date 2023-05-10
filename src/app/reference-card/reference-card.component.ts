@@ -14,6 +14,16 @@ export class ReferenceCardComponent implements OnInit {
   phone: string = '';
   email: string = '';
 
+  toggleContact = () => {
+    const el = document.getElementById(`contact-${this.reference.Id}`);
+    if (el) el.style.display = el.style.display == 'block' ? 'none' : 'block';
+  };
+
+  toggleComment = () => {
+    const el = document.getElementById(`comments-${this.reference.Id}`);
+    if (el) el.style.display = el.style.display == 'block' ? 'none' : 'block';
+  };
+
   ngOnInit(): void {
     this.name = this.reference.Name ? FormatName(this.reference.Name) : '';
     this.phone =

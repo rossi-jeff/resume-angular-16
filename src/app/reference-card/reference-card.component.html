@@ -8,15 +8,39 @@
     <strong class="mr-2">Title</strong>
     {{ reference.Title }}
   </div>
-  <div *ngIf="phone.length">
-    <strong class="mr-2">Phone</strong>
-    {{ phone }}
+  <button
+    *ngIf="phone.length || email.length"
+    class="w-full text-left font-bold"
+    (click)="toggleContact()"
+  >
+    Contact
+  </button>
+  <div
+    *ngIf="phone.length || email.length"
+    id="contact-{{ reference.Id }}"
+    style="display: none"
+  >
+    <div *ngIf="phone.length">
+      <strong class="mr-2">Phone</strong>
+      {{ phone }}
+    </div>
+    <div *ngIf="email.length">
+      <strong class="mr-2">Email</strong>
+      {{ email }}
+    </div>
   </div>
-  <div *ngIf="email.length">
-    <strong class="mr-2">Email</strong>
-    {{ email }}
-  </div>
-  <div *ngIf="reference.Comments && reference.Comments.length > 0">
+  <button
+    *ngIf="reference.Comments && reference.Comments.length > 0"
+    class="w-full text-left font-bold"
+    (click)="toggleComment()"
+  >
+    Comments
+  </button>
+  <div
+    *ngIf="reference.Comments && reference.Comments.length > 0"
+    id="comments-{{ reference.Id }}"
+    style="display: none"
+  >
     <div *ngFor="let comment of reference.Comments">
       {{ comment.Message }}
     </div>
