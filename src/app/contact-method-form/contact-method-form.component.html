@@ -8,7 +8,18 @@
     </div>
     <div>
       <label for="email">Email</label>
-      <input type="email" name="email" id="email" formControlName="Email" />
+      <input
+        type="email"
+        name="email"
+        id="email"
+        formControlName="Email"
+        required
+        email
+      />
+      <div *ngIf="email && email.invalid && (email.dirty || email.touched)">
+        <div *ngIf="email.errors?.['required']">Email is required</div>
+        <div *ngIf="email.errors?.['email']">Email format is not valid</div>
+      </div>
     </div>
     <div>
       <label for="phone-type">Phone Type</label>

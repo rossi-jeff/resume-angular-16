@@ -13,6 +13,14 @@ export class NameFormComponent implements OnInit {
 
   constructor(private rootFormGroup: FormGroupDirective) {}
 
+  get firstName() {
+    return this.form.get('First');
+  }
+
+  get lastName() {
+    return this.form.get('Last');
+  }
+
   ngOnInit(): void {
     this.form = this.rootFormGroup.control.get(this.formName) as FormGroup;
   }

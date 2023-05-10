@@ -8,7 +8,22 @@
     </div>
     <div>
       <label for="first">First</label>
-      <input type="text" name="first" id="first" formControlName="First" />
+      <input
+        type="text"
+        name="first"
+        id="first"
+        formControlName="First"
+        required
+      />
+      <div
+        *ngIf="
+          firstName &&
+          firstName.invalid &&
+          (firstName.dirty || firstName.touched)
+        "
+      >
+        <div *ngIf="firstName.errors?.['required']">First Name is required</div>
+      </div>
     </div>
     <div>
       <label for="middle">Middle</label>
@@ -17,6 +32,13 @@
     <div>
       <label for="last">Last</label>
       <input type="text" name="last" id="last" formControlName="Last" />
+      <div
+        *ngIf="
+          lastName && lastName.invalid && (lastName.dirty || lastName.touched)
+        "
+      >
+        <div *ngIf="lastName.errors?.['required']">Last Name is required</div>
+      </div>
     </div>
     <div>
       <label for="suffix">Suffix</label>

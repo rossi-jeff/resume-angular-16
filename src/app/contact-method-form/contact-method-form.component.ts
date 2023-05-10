@@ -14,6 +14,10 @@ export class ContactMethodFormComponent implements OnInit {
 
   constructor(private rootFormGroup: FormGroupDirective) {}
 
+  get email() {
+    return this.form.get('Email');
+  }
+
   ngOnInit(): void {
     this.form = this.rootFormGroup.control;
   }

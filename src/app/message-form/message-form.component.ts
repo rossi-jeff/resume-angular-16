@@ -11,6 +11,14 @@ export class MessageFormComponent implements OnInit {
 
   constructor(private rootFormGroup: FormGroupDirective) {}
 
+  get subject() {
+    return this.form.get('Subject');
+  }
+
+  get message() {
+    return this.form.get('Message');
+  }
+
   ngOnInit(): void {
     this.form = this.rootFormGroup.control;
   }

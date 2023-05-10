@@ -1,6 +1,9 @@
 <h1>Contact Me</h1>
 
-<div id="contact-form-wrapper" [formGroup]="contactForm">
+<div *ngIf="sent">
+  Thank You {{ name }} for the message, I will respond promptly.
+</div>
+<div id="contact-form-wrapper" [formGroup]="contactForm" *ngIf="!sent">
   <div id="contact-accordion">
     <!-- name -->
     <div id="name-accordion" class="accordion-section">
@@ -43,4 +46,12 @@
       </div>
     </div>
   </div>
+  <!--submit-->
+  <button
+    [disabled]="contactForm.status != 'VALID'"
+    class="contact-submit"
+    (click)="sendMessage()"
+  >
+    Send Message
+  </button>
 </div>

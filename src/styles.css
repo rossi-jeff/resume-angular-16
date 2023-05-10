@@ -35,3 +35,16 @@ button.accordion.open {
 .accordion-section {
   @apply border border-black rounded p-2;
 }
+button.contact-submit {
+  @apply border border-black rounded px-2 py-1 mt-2;
+}
+button.contact-submit:hover {
+  @apply bg-slate-300;
+}
+button:disabled {
+  @apply bg-slate-200 opacity-50;
+}
+input.ng-invalid.ng-touched,
+textarea.ng-invalid.ng-touched {
+  @apply border border-red-500;
+}

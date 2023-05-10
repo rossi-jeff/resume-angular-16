@@ -7,7 +7,13 @@
       id="subject"
       class="w-full"
       formControlName="Subject"
+      required
     />
+    <div
+      *ngIf="subject && subject.invalid && (subject.dirty || subject.touched)"
+    >
+      <div *ngIf="subject.errors?.['required']">Subject is required</div>
+    </div>
   </div>
   <div>
     <label for="message">Message</label>
@@ -16,6 +22,12 @@
       id="message"
       class="w-full h-20"
       formControlName="Message"
+      required
     ></textarea>
+    <div
+      *ngIf="message && message.invalid && (message.dirty || message.touched)"
+    >
+      <div *ngIf="message.errors?.['required']">Message is required</div>
+    </div>
   </div>
 </form>
