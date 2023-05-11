@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Comment } from '../../types/comment.type';
 import { GraphqlService } from '../graphql.service';
 import { GET_COMMENTS_QUERY } from '../../graphql/queries/get-comments';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-testimonials',
@@ -11,7 +12,9 @@ import { GET_COMMENTS_QUERY } from '../../graphql/queries/get-comments';
 export class TestimonialsComponent implements OnInit {
   comments: Comment[] = [];
 
-  constructor(private graphql: GraphqlService) {}
+  constructor(private graphql: GraphqlService, private titleService: Title) {
+    this.titleService.setTitle('Jeff Rosssi | Testimonials');
+  }
 
   ngOnInit(): void {
     this.graphql

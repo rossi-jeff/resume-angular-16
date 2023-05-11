@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { GraphqlService } from '../graphql.service';
 import { Link } from '../../types/link.type';
 import { GET_LINKS_QUERY } from '../../graphql/queries/get-links';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-links',
@@ -11,7 +12,9 @@ import { GET_LINKS_QUERY } from '../../graphql/queries/get-links';
 export class LinksComponent implements OnInit {
   links: Link[] = [];
 
-  constructor(private graphql: GraphqlService) {}
+  constructor(private graphql: GraphqlService, private titleService: Title) {
+    this.titleService.setTitle('Jeff Rosssi | Links');
+  }
 
   ngOnInit(): void {
     this.graphql

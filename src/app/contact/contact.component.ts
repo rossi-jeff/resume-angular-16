@@ -6,6 +6,7 @@ import { RemoveBlanks } from '../../lib/remove-blanks';
 import { FormatName } from '../../lib/format-name';
 import { FullName } from '../../types/full-name.type';
 import { blankContact } from '../../types/contact.type';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-contact',
@@ -17,7 +18,13 @@ export class ContactComponent implements OnInit {
   sent: boolean = false;
   name: string = '';
 
-  constructor(private fb: FormBuilder, private graphql: GraphqlService) {}
+  constructor(
+    private fb: FormBuilder,
+    private graphql: GraphqlService,
+    private titleService: Title
+  ) {
+    this.titleService.setTitle('Jeff Rosssi | Contact Me');
+  }
 
   toggle = (target: string) => {
     const names = ['name', 'address', 'contact-method', 'message'];

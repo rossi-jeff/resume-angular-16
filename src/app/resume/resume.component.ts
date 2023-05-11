@@ -9,6 +9,7 @@ import { GET_REFERENCES_QUERY } from '../../graphql/queries/get-references';
 import { FormatName } from '../../lib/format-name';
 import { Address } from '../../types/address.type';
 import { FormatAddress } from '../../lib/format-address';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-resume',
@@ -20,7 +21,9 @@ export class ResumeComponent implements OnInit {
   schools: School[] = [];
   references: Reference[] = [];
 
-  constructor(private graphql: GraphqlService) {}
+  constructor(private graphql: GraphqlService, private titleService: Title) {
+    this.titleService.setTitle('Jeff Rosssi | Resume');
+  }
 
   getName = (reference: Reference) => {
     return reference.Name ? FormatName(reference.Name) : '';
