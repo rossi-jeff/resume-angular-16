@@ -24,6 +24,9 @@ import { AddressFormComponent } from './address-form/address-form.component';
 import { LinkRowComponent } from './link-row/link-row.component';
 import { FooterBarComponent } from './footer-bar/footer-bar.component';
 import { HeaderBarComponent } from './header-bar/header-bar.component';
+import { RightPanelComponent } from './right-panel/right-panel.component';
+import { NgIconsModule } from '@ng-icons/core';
+import { heroBars3Solid, heroXCircleSolid } from '@ng-icons/heroicons/solid';
 
 @NgModule({
   declarations: [
@@ -47,12 +50,14 @@ import { HeaderBarComponent } from './header-bar/header-bar.component';
     LinkRowComponent,
     FooterBarComponent,
     HeaderBarComponent,
+    RightPanelComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
+    NgIconsModule.withIcons({ heroBars3Solid, heroXCircleSolid }),
   ],
   providers: [],
   bootstrap: [AppComponent],

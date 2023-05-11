@@ -18,6 +18,11 @@ export class AppComponent implements OnInit {
     this.setTheme(name);
   };
 
+  toggleMenu = () => {
+    const panel = document.getElementById('right-panel');
+    if (panel) panel.classList.toggle('open');
+  };
+
   ngOnInit(): void {
     this.setTheme(themeNames[0]);
   }

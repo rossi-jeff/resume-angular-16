@@ -1,8 +1,14 @@
-<main class="h-screen flex flex-col" id="main">
-  <app-header-bar (themeChange)="themeChanged($event)"></app-header-bar>
-  <div class="flex-grow overflow-y-auto h-full mx-2 px-2 py-2">
-    <router-outlet></router-outlet>
-    <div id="scroll-space" class="h-10"></div>
+<main id="main" class="m-0 p-0">
+  <div id="content" class="h-screen flex flex-col">
+    <app-header-bar
+      (themeChange)="themeChanged($event)"
+      (toggleMenu)="toggleMenu()"
+    ></app-header-bar>
+    <div class="flex-grow overflow-y-auto h-full mx-2 px-2 py-2">
+      <router-outlet></router-outlet>
+      <div id="scroll-space" class="h-10"></div>
+    </div>
+    <app-footer-bar></app-footer-bar>
   </div>
-  <app-footer-bar></app-footer-bar>
+  <app-right-panel (toggleMenu)="toggleMenu()"></app-right-panel>
 </main>

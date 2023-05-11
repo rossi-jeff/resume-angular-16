@@ -9,6 +9,11 @@ import { themeNames } from '../../lib/themes';
 export class HeaderBarComponent {
   names: string[] = themeNames;
   @Output() themeChange: EventEmitter<string> = new EventEmitter();
+  @Output() toggleMenu: EventEmitter<any> = new EventEmitter();
+
+  menuToggleClicked = () => {
+    this.toggleMenu.emit();
+  };
 
   themeSelectChanged = (ev: any) => {
     const name = themeNames[ev.target.selectedIndex];

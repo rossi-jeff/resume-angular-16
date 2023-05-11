@@ -65,3 +65,15 @@ a:hover {
 #print-container strong {
   @apply text-black;
 }
+#right-panel {
+  @apply w-[10rem] fixed h-screen top-0 right-[-10rem] bg-four text-one z-10 overflow-x-hidden transition;
+}
+#right-nav-buttons button {
+  @apply mx-2 my-1 w-full text-left border-b border-dashed text-one;
+}
+#right-nav-buttons button:hover {
+  @apply text-four bg-one opacity-80;
+}
+#right-panel.open {
+  @apply right-0;
+}
