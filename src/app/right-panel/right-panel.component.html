@@ -5,13 +5,21 @@
     </button>
   </div>
   <div class="flex flex-col" id="right-nav-buttons">
-    <button routerLink="/">Home</button>
-    <button routerLink="/employment">Employment</button>
-    <button routerLink="/education">Education</button>
-    <button routerLink="/contact">Contact</button>
-    <button routerLink="/references">References</button>
-    <button routerLink="/testimonials">Testimonials</button>
-    <button routerLink="/resume">Resume</button>
-    <button routerLink="/links">Links</button>
+    <button routerLink="/" (click)="menuToggleClicked()">Home</button>
+    <button routerLink="/employment" (click)="menuToggleClicked()">
+      Employment
+    </button>
+    <button routerLink="/education" (click)="menuToggleClicked()">
+      Education
+    </button>
+    <button routerLink="/contact" (click)="menuToggleClicked()">Contact</button>
+    <button routerLink="/references" (click)="menuToggleClicked()">
+      References
+    </button>
+    <button routerLink="/testimonials" (click)="menuToggleClicked()">
+      Testimonials
+    </button>
+    <button routerLink="/resume" (click)="menuToggleClicked()">Resume</button>
+    <button routerLink="/links" (click)="menuToggleClicked()">Links</button>
   </div>
 </div>
